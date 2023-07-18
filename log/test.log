@@ -1,0 +1,1232 @@
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "articles"[0m
+  [1m[35m (23.0ms)[0m  [1m[35mCREATE TABLE "articles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (15.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "password_digest" varchar, "admin" boolean DEFAULT 0)[0m
+  [1m[35m (14.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (11.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230509072616)[0m
+  [1m[35m (12.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230428095156),
+(20230503054947),
+(20230503070823),
+(20230503081902);
+
+[0m
+  [1m[35m (16.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2023-05-09 09:11:12.069950"], ["updated_at", "2023-05-09 09:11:12.069950"]]
+  [1m[36mTRANSACTION (11.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "14bb0d61aa7acae29f829d417169ee64cc8bd9c8"], ["created_at", "2023-05-09 09:11:12.088500"], ["updated_at", "2023-05-09 09:11:12.088500"]]
+  [1m[36mTRANSACTION (11.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "articles"[0m
+  [1m[35m (16.9ms)[0m  [1m[35mCREATE TABLE "articles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories"[0m
+  [1m[35m (14.3ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (13.6ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "password_digest" varchar, "admin" boolean DEFAULT 0)[0m
+  [1m[35m (13.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (11.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230509091924)[0m
+  [1m[35m (12.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230428095156),
+(20230503054947),
+(20230503070823),
+(20230503081902),
+(20230509072616);
+
+[0m
+  [1m[35m (14.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2023-05-09 09:35:52.719551"], ["updated_at", "2023-05-09 09:35:52.719551"]]
+  [1m[36mTRANSACTION (11.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "35840fbf369aa8f40cf8f11b1b0c81975f03e910"], ["created_at", "2023-05-09 09:35:52.739791"], ["updated_at", "2023-05-09 09:35:52.739791"]]
+  [1m[36mTRANSACTION (10.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "articles"[0m
+  [1m[35m (17.3ms)[0m  [1m[35mCREATE TABLE "articles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories"[0m
+  [1m[35m (15.6ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (15.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "password_digest" varchar, "admin" boolean DEFAULT 0)[0m
+  [1m[35m (15.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (12.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230509095254)[0m
+  [1m[35m (12.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230428095156),
+(20230503054947),
+(20230503070823),
+(20230503081902),
+(20230509072616),
+(20230509091924);
+
+[0m
+  [1m[35m (15.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2023-05-09 09:53:14.801721"], ["updated_at", "2023-05-09 09:53:14.801721"]]
+  [1m[36mTRANSACTION (11.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "78841379b7250f29bc1b1c7bb8aaa395a2e4f15e"], ["created_at", "2023-05-09 09:53:14.822116"], ["updated_at", "2023-05-09 09:53:14.822116"]]
+  [1m[36mTRANSACTION (11.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "articles"[0m
+  [1m[35m (14.9ms)[0m  [1m[35mCREATE TABLE "articles" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "description" text, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "user_id" integer)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE IF EXISTS "categories"[0m
+  [1m[35m (14.6ms)[0m  [1m[35mCREATE TABLE "categories" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "pages"[0m
+  [1m[35m (14.9ms)[0m  [1m[35mCREATE TABLE "pages" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users"[0m
+  [1m[35m (15.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "username" varchar, "email" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "password_digest" varchar, "admin" boolean DEFAULT 0)[0m
+  [1m[35m (14.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (11.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20230509121513)[0m
+  [1m[35m (12.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20230428095156),
+(20230503054947),
+(20230503070823),
+(20230503081902),
+(20230509072616),
+(20230509091924);
+
+[0m
+  [1m[35m (15.3ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "test"], ["created_at", "2023-05-09 12:15:52.965672"], ["updated_at", "2023-05-09 12:15:52.965672"]]
+  [1m[36mTRANSACTION (11.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "7262eccf483a03fdcbc7609f8ef8f7ad1db872bf"], ["created_at", "2023-05-09 12:15:52.987877"], ["updated_at", "2023-05-09 12:15:52.987877"]]
+  [1m[36mTRANSACTION (11.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-09 12:15:53.094578', '2023-05-09 12:15:53.094578');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-09 12:15:53.094578', '2023-05-09 12:15:53.094578');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-09 12:15:53.096199', '2023-05-09 12:15:53.096199');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-09 12:15:53.096199', '2023-05-09 12:15:53.096199');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-09 12:15:53.181089', '2023-05-09 12:15:53.181089');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-09 12:15:53.181089', '2023-05-09 12:15:53.181089');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-09 12:15:53.181159', '2023-05-09 12:15:53.181159');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-09 12:15:53.181159', '2023-05-09 12:15:53.181159');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-09 12:15:53.190901', '2023-05-09 12:15:53.190901');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-09 12:15:53.190901', '2023-05-09 12:15:53.190901');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-09 12:15:53.191023', '2023-05-09 12:15:53.191023');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-09 12:15:53.191023', '2023-05-09 12:15:53.191023');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.7ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-09 12:19:35.365798', '2023-05-09 12:19:35.365798');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-09 12:19:35.365798', '2023-05-09 12:19:35.365798');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-09 12:19:35.367679', '2023-05-09 12:19:35.367679');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-09 12:19:35.367679', '2023-05-09 12:19:35.367679');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.4ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-09 12:19:35.456917', '2023-05-09 12:19:35.456917');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-09 12:19:35.456917', '2023-05-09 12:19:35.456917');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-09 12:19:35.456986', '2023-05-09 12:19:35.456986');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-09 12:19:35.456986', '2023-05-09 12:19:35.456986');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-09 12:19:35.468268', '2023-05-09 12:19:35.468268');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-09 12:19:35.468268', '2023-05-09 12:19:35.468268');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-09 12:19:35.468369', '2023-05-09 12:19:35.468369');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-09 12:19:35.468369', '2023-05-09 12:19:35.468369');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.7ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-09 12:33:38.570273', '2023-05-09 12:33:38.570273');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-09 12:33:38.570273', '2023-05-09 12:33:38.570273');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-09 12:33:38.573562', '2023-05-09 12:33:38.573562');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-09 12:33:38.573562', '2023-05-09 12:33:38.573562');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-09 12:33:38.665725', '2023-05-09 12:33:38.665725');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-09 12:33:38.665725', '2023-05-09 12:33:38.665725');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-09 12:33:38.665813', '2023-05-09 12:33:38.665813');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-09 12:33:38.665813', '2023-05-09 12:33:38.665813');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.8ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-09 12:33:38.674886', '2023-05-09 12:33:38.674886');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-09 12:33:38.674886', '2023-05-09 12:33:38.674886');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-09 12:33:38.674989', '2023-05-09 12:33:38.674989');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-09 12:33:38.674989', '2023-05-09 12:33:38.674989');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-09 12:33:38.684252', '2023-05-09 12:33:38.684252');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-09 12:33:38.684252', '2023-05-09 12:33:38.684252');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-09 12:33:38.684339', '2023-05-09 12:33:38.684339');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-09 12:33:38.684339', '2023-05-09 12:33:38.684339');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-09 12:33:38.693349', '2023-05-09 12:33:38.693349');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-09 12:33:38.693349', '2023-05-09 12:33:38.693349');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-09 12:33:38.693490', '2023-05-09 12:33:38.693490');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-09 12:33:38.693490', '2023-05-09 12:33:38.693490');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.7ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-09 12:33:38.702128', '2023-05-09 12:33:38.702128');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-09 12:33:38.702128', '2023-05-09 12:33:38.702128');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-09 12:33:38.702223', '2023-05-09 12:33:38.702223');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-09 12:33:38.702223', '2023-05-09 12:33:38.702223');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-09 12:33:38.711580', '2023-05-09 12:33:38.711580');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-09 12:33:38.711580', '2023-05-09 12:33:38.711580');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-09 12:33:38.711699', '2023-05-09 12:33:38.711699');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-09 12:33:38.711699', '2023-05-09 12:33:38.711699');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-09 12:35:32.732213', '2023-05-09 12:35:32.732213');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-09 12:35:32.732213', '2023-05-09 12:35:32.732213');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-09 12:35:32.734456', '2023-05-09 12:35:32.734456');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-09 12:35:32.734456', '2023-05-09 12:35:32.734456');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (1.8ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-09 12:35:32.838170', '2023-05-09 12:35:32.838170');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-09 12:35:32.838170', '2023-05-09 12:35:32.838170');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-09 12:35:32.838236', '2023-05-09 12:35:32.838236');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-09 12:35:32.838236', '2023-05-09 12:35:32.838236');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-09 12:35:32.847085', '2023-05-09 12:35:32.847085');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-09 12:35:32.847085', '2023-05-09 12:35:32.847085');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-09 12:35:32.847153', '2023-05-09 12:35:32.847153');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-09 12:35:32.847153', '2023-05-09 12:35:32.847153');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.7ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-09 12:35:32.854857', '2023-05-09 12:35:32.854857');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-09 12:35:32.854857', '2023-05-09 12:35:32.854857');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-09 12:35:32.854970', '2023-05-09 12:35:32.854970');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-09 12:35:32.854970', '2023-05-09 12:35:32.854970');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.8ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 04:48:14.654190', '2023-05-10 04:48:14.654190');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 04:48:14.654190', '2023-05-10 04:48:14.654190');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 04:48:14.656222', '2023-05-10 04:48:14.656222');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 04:48:14.656222', '2023-05-10 04:48:14.656222');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 04:48:14.778587', '2023-05-10 04:48:14.778587');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 04:48:14.778587', '2023-05-10 04:48:14.778587');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 04:48:14.778656', '2023-05-10 04:48:14.778656');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 04:48:14.778656', '2023-05-10 04:48:14.778656');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 04:48:14.794385', '2023-05-10 04:48:14.794385');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 04:48:14.794385', '2023-05-10 04:48:14.794385');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 04:48:14.794484', '2023-05-10 04:48:14.794484');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 04:48:14.794484', '2023-05-10 04:48:14.794484');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 04:48:14.802689', '2023-05-10 04:48:14.802689');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 04:48:14.802689', '2023-05-10 04:48:14.802689');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 04:48:14.802786', '2023-05-10 04:48:14.802786');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 04:48:14.802786', '2023-05-10 04:48:14.802786');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 04:48:14.813667', '2023-05-10 04:48:14.813667');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 04:48:14.813667', '2023-05-10 04:48:14.813667');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 04:48:14.813775', '2023-05-10 04:48:14.813775');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 04:48:14.813775', '2023-05-10 04:48:14.813775');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 04:48:14.821895', '2023-05-10 04:48:14.821895');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 04:48:14.821895', '2023-05-10 04:48:14.821895');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 04:48:14.822005', '2023-05-10 04:48:14.822005');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 04:48:14.822005', '2023-05-10 04:48:14.822005');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.8ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 04:48:14.836067', '2023-05-10 04:48:14.836067');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 04:48:14.836067', '2023-05-10 04:48:14.836067');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 04:48:14.836189', '2023-05-10 04:48:14.836189');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 04:48:14.836189', '2023-05-10 04:48:14.836189');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.7ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 04:48:14.846158', '2023-05-10 04:48:14.846158');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 04:48:14.846158', '2023-05-10 04:48:14.846158');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 04:48:14.846260', '2023-05-10 04:48:14.846260');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 04:48:14.846260', '2023-05-10 04:48:14.846260');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 04:48:14.854806', '2023-05-10 04:48:14.854806');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 04:48:14.854806', '2023-05-10 04:48:14.854806');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 04:48:14.854922', '2023-05-10 04:48:14.854922');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 04:48:14.854922', '2023-05-10 04:48:14.854922');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.8ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 04:49:03.733113', '2023-05-10 04:49:03.733113');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 04:49:03.733113', '2023-05-10 04:49:03.733113');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 04:49:03.734721', '2023-05-10 04:49:03.734721');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 04:49:03.734721', '2023-05-10 04:49:03.734721');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.4ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 04:49:03.836628', '2023-05-10 04:49:03.836628');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 04:49:03.836628', '2023-05-10 04:49:03.836628');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 04:49:03.836698', '2023-05-10 04:49:03.836698');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 04:49:03.836698', '2023-05-10 04:49:03.836698');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.7ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 04:49:03.842572', '2023-05-10 04:49:03.842572');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 04:49:03.842572', '2023-05-10 04:49:03.842572');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 04:49:03.842651', '2023-05-10 04:49:03.842651');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 04:49:03.842651', '2023-05-10 04:49:03.842651');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 04:49:03.851301', '2023-05-10 04:49:03.851301');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 04:49:03.851301', '2023-05-10 04:49:03.851301');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 04:49:03.851481', '2023-05-10 04:49:03.851481');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 04:49:03.851481', '2023-05-10 04:49:03.851481');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 04:49:03.862023', '2023-05-10 04:49:03.862023');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 04:49:03.862023', '2023-05-10 04:49:03.862023');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 04:49:03.862127', '2023-05-10 04:49:03.862127');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 04:49:03.862127', '2023-05-10 04:49:03.862127');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 04:49:03.870739', '2023-05-10 04:49:03.870739');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 04:49:03.870739', '2023-05-10 04:49:03.870739');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 04:49:03.870844', '2023-05-10 04:49:03.870844');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 04:49:03.870844', '2023-05-10 04:49:03.870844');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 04:49:03.880397', '2023-05-10 04:49:03.880397');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 04:49:03.880397', '2023-05-10 04:49:03.880397');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 04:49:03.880527', '2023-05-10 04:49:03.880527');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 04:49:03.880527', '2023-05-10 04:49:03.880527');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.8ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 04:49:03.888449', '2023-05-10 04:49:03.888449');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 04:49:03.888449', '2023-05-10 04:49:03.888449');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 04:49:03.888568', '2023-05-10 04:49:03.888568');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 04:49:03.888568', '2023-05-10 04:49:03.888568');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 04:49:03.896627', '2023-05-10 04:49:03.896627');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 04:49:03.896627', '2023-05-10 04:49:03.896627');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 04:49:03.896723', '2023-05-10 04:49:03.896723');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 04:49:03.896723', '2023-05-10 04:49:03.896723');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 06:07:19.744341', '2023-05-10 06:07:19.744341');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 06:07:19.744341', '2023-05-10 06:07:19.744341');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 06:07:19.747183', '2023-05-10 06:07:19.747183');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 06:07:19.747183', '2023-05-10 06:07:19.747183');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 06:09:50.210263', '2023-05-10 06:09:50.210263');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 06:09:50.210263', '2023-05-10 06:09:50.210263');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 06:09:50.213340', '2023-05-10 06:09:50.213340');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 06:09:50.213340', '2023-05-10 06:09:50.213340');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 06:09:50.313846', '2023-05-10 06:09:50.313846');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 06:09:50.313846', '2023-05-10 06:09:50.313846');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 06:09:50.313918', '2023-05-10 06:09:50.313918');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 06:09:50.313918', '2023-05-10 06:09:50.313918');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.7ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 06:09:50.326252', '2023-05-10 06:09:50.326252');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 06:09:50.326252', '2023-05-10 06:09:50.326252');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 06:09:50.326331', '2023-05-10 06:09:50.326331');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 06:09:50.326331', '2023-05-10 06:09:50.326331');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.7ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 06:09:50.335629', '2023-05-10 06:09:50.335629');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 06:09:50.335629', '2023-05-10 06:09:50.335629');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 06:09:50.335737', '2023-05-10 06:09:50.335737');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 06:09:50.335737', '2023-05-10 06:09:50.335737');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 06:09:50.351835', '2023-05-10 06:09:50.351835');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 06:09:50.351835', '2023-05-10 06:09:50.351835');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 06:09:50.351938', '2023-05-10 06:09:50.351938');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 06:09:50.351938', '2023-05-10 06:09:50.351938');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.7ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 06:09:50.360274', '2023-05-10 06:09:50.360274');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 06:09:50.360274', '2023-05-10 06:09:50.360274');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 06:09:50.360393', '2023-05-10 06:09:50.360393');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 06:09:50.360393', '2023-05-10 06:09:50.360393');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 06:09:50.368728', '2023-05-10 06:09:50.368728');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 06:09:50.368728', '2023-05-10 06:09:50.368728');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 06:09:50.368796', '2023-05-10 06:09:50.368796');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 06:09:50.368796', '2023-05-10 06:09:50.368796');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 06:09:50.378342', '2023-05-10 06:09:50.378342');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 06:09:50.378342', '2023-05-10 06:09:50.378342');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 06:09:50.378426', '2023-05-10 06:09:50.378426');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 06:09:50.378426', '2023-05-10 06:09:50.378426');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 06:09:50.386676', '2023-05-10 06:09:50.386676');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 06:09:50.386676', '2023-05-10 06:09:50.386676');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 06:09:50.386821', '2023-05-10 06:09:50.386821');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 06:09:50.386821', '2023-05-10 06:09:50.386821');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.7ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 06:09:50.396130', '2023-05-10 06:09:50.396130');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 06:09:50.396130', '2023-05-10 06:09:50.396130');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 06:09:50.396264', '2023-05-10 06:09:50.396264');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 06:09:50.396264', '2023-05-10 06:09:50.396264');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 06:09:50.404949', '2023-05-10 06:09:50.404949');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 06:09:50.404949', '2023-05-10 06:09:50.404949');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 06:09:50.405025', '2023-05-10 06:09:50.405025');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 06:09:50.405025', '2023-05-10 06:09:50.405025');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.7ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 06:09:50.413096', '2023-05-10 06:09:50.413096');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 06:09:50.413096', '2023-05-10 06:09:50.413096');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 06:09:50.413171', '2023-05-10 06:09:50.413171');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 06:09:50.413171', '2023-05-10 06:09:50.413171');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 06:10:56.103136', '2023-05-10 06:10:56.103136');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 06:10:56.103136', '2023-05-10 06:10:56.103136');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 06:10:56.104691', '2023-05-10 06:10:56.104691');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 06:10:56.104691', '2023-05-10 06:10:56.104691');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mActiveRecord::InternalMetadata Pluck (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 07:44:53.413937', '2023-05-10 07:44:53.413937');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 07:44:53.413937', '2023-05-10 07:44:53.413937');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 07:44:53.415634', '2023-05-10 07:44:53.415634');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 07:44:53.415634', '2023-05-10 07:44:53.415634');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.7ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 07:44:53.426225', '2023-05-10 07:44:53.426225');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 07:44:53.426225', '2023-05-10 07:44:53.426225');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 07:44:53.426350', '2023-05-10 07:44:53.426350');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 07:44:53.426350', '2023-05-10 07:44:53.426350');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.7ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 07:44:53.435490', '2023-05-10 07:44:53.435490');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 07:44:53.435490', '2023-05-10 07:44:53.435490');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 07:44:53.435589', '2023-05-10 07:44:53.435589');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 07:44:53.435589', '2023-05-10 07:44:53.435589');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 07:44:53.444666', '2023-05-10 07:44:53.444666');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 07:44:53.444666', '2023-05-10 07:44:53.444666');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 07:44:53.444759', '2023-05-10 07:44:53.444759');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 07:44:53.444759', '2023-05-10 07:44:53.444759');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 07:44:53.453422', '2023-05-10 07:44:53.453422');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 07:44:53.453422', '2023-05-10 07:44:53.453422');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 07:44:53.453530', '2023-05-10 07:44:53.453530');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 07:44:53.453530', '2023-05-10 07:44:53.453530');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 07:44:53.463589', '2023-05-10 07:44:53.463589');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 07:44:53.463589', '2023-05-10 07:44:53.463589');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 07:44:53.463693', '2023-05-10 07:44:53.463693');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 07:44:53.463693', '2023-05-10 07:44:53.463693');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 07:44:53.565588', '2023-05-10 07:44:53.565588');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 07:44:53.565588', '2023-05-10 07:44:53.565588');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 07:44:53.565666', '2023-05-10 07:44:53.565666');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 07:44:53.565666', '2023-05-10 07:44:53.565666');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 07:44:53.575345', '2023-05-10 07:44:53.575345');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 07:44:53.575345', '2023-05-10 07:44:53.575345');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 07:44:53.575512', '2023-05-10 07:44:53.575512');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 07:44:53.575512', '2023-05-10 07:44:53.575512');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.7ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 07:44:53.584088', '2023-05-10 07:44:53.584088');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 07:44:53.584088', '2023-05-10 07:44:53.584088');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 07:44:53.584182', '2023-05-10 07:44:53.584182');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 07:44:53.584182', '2023-05-10 07:44:53.584182');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.7ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 07:44:53.592439', '2023-05-10 07:44:53.592439');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 07:44:53.592439', '2023-05-10 07:44:53.592439');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 07:44:53.592566', '2023-05-10 07:44:53.592566');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 07:44:53.592566', '2023-05-10 07:44:53.592566');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 07:44:53.602332', '2023-05-10 07:44:53.602332');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 07:44:53.602332', '2023-05-10 07:44:53.602332');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 07:44:53.602466', '2023-05-10 07:44:53.602466');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 07:44:53.602466', '2023-05-10 07:44:53.602466');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.5ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 07:44:53.611566', '2023-05-10 07:44:53.611566');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 07:44:53.611566', '2023-05-10 07:44:53.611566');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 07:44:53.611685', '2023-05-10 07:44:53.611685');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 07:44:53.611685', '2023-05-10 07:44:53.611685');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.0ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFixtures Load (0.6ms)[0m  [1m[31mDELETE FROM "articles";
+DELETE FROM "categories";
+DELETE FROM "pages";
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (980190962, 'MyString', 'MyText', '2023-05-10 07:44:53.620229', '2023-05-10 07:44:53.620229');
+INSERT INTO "articles" ("id", "title", "description", "created_at", "updated_at") VALUES (298486374, 'MyString', 'MyText', '2023-05-10 07:44:53.620229', '2023-05-10 07:44:53.620229');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (980190962, '2023-05-10 07:44:53.620421', '2023-05-10 07:44:53.620421');
+INSERT INTO "categories" ("id", "created_at", "updated_at") VALUES (298486374, '2023-05-10 07:44:53.620421', '2023-05-10 07:44:53.620421');
+INSERT INTO "pages" VALUES ();
+INSERT INTO "pages" VALUES ()[0m
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
